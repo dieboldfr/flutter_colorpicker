@@ -653,6 +653,7 @@ class HueRingPicker extends StatefulWidget {
     this.hueRingStrokeWidth = 20.0,
     this.enableAlpha = false,
     this.displayThumbColor = true,
+    this.displayInput = false,
     this.pickerAreaBorderRadius = const BorderRadius.all(Radius.zero),
   }) : super(key: key);
 
@@ -663,6 +664,7 @@ class HueRingPicker extends StatefulWidget {
   final double hueRingStrokeWidth;
   final bool enableAlpha;
   final bool displayThumbColor;
+  final bool displayInput;
   final BorderRadius pickerAreaBorderRadius;
 
   @override
@@ -709,6 +711,7 @@ class _HueRingPickerState extends State<HueRingPicker> {
                     strokeWidth: widget.hueRingStrokeWidth,
                   ),
                 ),
+
                 SizedBox(
                   width: widget.colorPickerHeight / 1.6,
                   height: widget.colorPickerHeight / 1.6,
@@ -728,6 +731,7 @@ class _HueRingPickerState extends State<HueRingPicker> {
                 displayThumbColor: widget.displayThumbColor,
               ),
             ),
+        if(widget.displayInput)
           Padding(
             padding: const EdgeInsets.fromLTRB(15.0, 5.0, 10.0, 5.0),
             child: Row(
